@@ -1,0 +1,65 @@
+@import "./../../../assets/sass/modules/var";
+
+.header-article{
+  display: flex;
+  align-items: center;
+}
+
+.header-article{
+  img{
+    margin: 0 15px 0 0;
+  }
+}
+
+.name-section, .title-section{
+  p{
+    margin: 0;
+  }
+}
+
+.body-article{
+  p{
+    margin: 20px 0 0 0;
+  }
+}
+
+.skill{
+  margin: 40px 0;
+  padding: 0 30px 0 0;
+}
+
+.card-relevant-info{
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 30px 0 0 0;
+  display: flex;
+  box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
+}
+
+.card-relevant-info{
+  article{
+    width: 25%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card-relevant-info{
+  .number{
+    font-size: $subtitles-h2;
+    font-weight: $bold;
+    font-family: 'Poppins';
+    color: $color-primary;
+    margin: 0 10px 0 0;
+  }
+}
+
+.card-relevant-info{
+  .lead{
+    line-height: 24px;
+    font-size: $blocktext;
+    color: $neutral-50;
+    font-weight: $regular;
+  }
+}

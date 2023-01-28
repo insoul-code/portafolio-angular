@@ -1,0 +1,33 @@
+/* Botones */
+
+a{
+  color: $color-primary;
+  transition: all ease-in-out 0.5s;
+}
+
+a:hover, .nav-link:focus, .nav-link:hover, a.active{
+  color: $color-secondary;
+  text-decoration: underline;
+}
+
+.btn-base{
+  border: none;
+  background: none;
+  border-radius: 20px;
+  padding: 0;
+}
+
+.button-primary{
+  color: #fff;
+  background: $color-primary;
+  transition: all ease-in-out 0.5s;
+}
+
+.button-primary:hover{
+  background: #332c99;
+  box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 44%);
+}
+
+.btn-big{
+  padding: 20px 30px;
+}

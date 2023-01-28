@@ -1,0 +1,33 @@
+@import "./../../../assets/sass/modules/var";
+
+.position-sticky{
+  z-index: 100;
+  top: 0;
+  background: $neutral-20;
+  padding: 10px;
+}
+
+.navbar-collapse{
+  flex-grow: 0 !important;
+}
+
+main{
+  .navbar-expand-lg{
+    .navbar-nav{
+      .nav-link {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+}
+
+.social-media{
+  img{
+    padding-left: 20px;
+  }
+}
+
+.nav-link{
+  color: $color-primary;
+}

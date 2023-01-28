@@ -1,0 +1,165 @@
+@import "./../../../assets/sass/modules/var";
+
+.projects{
+  .link-projects{
+    a{
+      color: $color-link-custom;
+    }
+    img{
+      margin: 0 0 0 5px;
+    }
+  }
+}
+
+.contenedor{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(7, 5rem);
+  grid-template-areas: "project-1      project-2   project-3"
+                       "project-1      project-2   project-3"
+                       "project-1      project-2   project-6"
+                       "project-1      project-5   project-6"
+                       "project-4      project-5   project-6"
+                       "project-4      project-5   project-7"
+                       "project-4      project-5   project-7";
+}
+
+.project-1, .project-2, .project-3, .project-4, .project-5, .project-6, .project-7{
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 2px 6px -3px rgba(0,0,0,0.20);
+}
+
+.contenedor{
+  .project-1{
+    grid-column: project-1;
+    grid-row: project-1;
+  }
+  .project-2{
+    color: $neutral-100;
+    grid-column: project-2;
+    grid-row: project-2;
+  }
+  .project-3{
+    background: #E5E5E5;
+    grid-column:  project-3;
+    grid-row:  project-3;
+  }
+  .project-4{
+    background: #E5E5E5;
+    grid-column:  project-4;
+    grid-row:  project-4;
+  }
+  .project-5{
+    background: #E5E5E5;
+    grid-column:  project-5;
+    grid-row:  project-5;
+  }
+  .project-6{
+    background: #E5E5E5;
+    grid-column:  project-6;
+    grid-row:  project-6;
+  }
+  .project-7{
+    background: #E5E5E5;
+    grid-column:  project-7;
+    grid-row:  project-7;
+  }
+}
+
+.img-width{
+  width: 100%;
+}
+
+.align-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f3f4f9;
+  padding: 15px 10px;
+  border-radius: 4px;
+}
+
+.align-link{
+  h6{
+    margin: 0;
+  }
+}
+
+.offcanvas-body{
+  .images{
+    img{
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .contenedor{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(16, 50px);
+    grid-template-areas: "project-1 project-2"
+                          "project-1 project-2"
+                          "project-1 project-2"
+                          "project-1 project-2"
+                          "project-3 project-4"
+                          "project-3 project-4"
+                          "project-3 project-4"
+                          "project-3 project-4"
+                          "project-5 project-6"
+                          "project-5 project-6"
+                          "project-5 project-6"
+                          "project-5 project-6"
+                          "project-7 project-7"
+                          "project-7 project-7"
+                          "project-7 project-7"
+                          "project-7 project-7";
+  }
+}
+
+@media screen and (max-width: 565px){
+  .card-relevant-info{
+    article{
+      width: 100%;
+    }
+  }
+
+  .contenedor{
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(28, 90px);
+      grid-template-areas: "project-1"
+                           "project-1"
+                           "project-1"
+                           "project-1"
+                           "project-2"
+                           "project-2"
+                           "project-2"
+                           "project-2"
+                           "project-3"
+                           "project-3"
+                           "project-3"
+                           "project-3"
+                           "project-4"
+                           "project-4"
+                           "project-4"
+                           "project-4"
+                           "project-5"
+                           "project-5"
+                           "project-5"
+                           "project-5"
+                           "project-6"
+                           "project-6"
+                           "project-6"
+                           "project-6"
+                           "project-7"
+                           "project-7"
+                           "project-7"
+                           "project-7";
+  }
+
+}
