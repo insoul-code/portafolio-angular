@@ -13,11 +13,30 @@
     </div>
   </div>
   <div class="contenedor padding-sections">
-    <div class="project-1">
-        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#sura" aria-controls="offcanvasRight">
-            <img class="img-width" src="./../../../assets/images/project1@2x.png" alt="SURA Inclusión asegurados">
+    <div [class]="grid.class" *ngFor="let grid of gridProject">
+        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas"  [attr.data-bs-target]="'#'+grid.client" data aria-controls="offcanvasRight">
+            <img class="img-width" [src]="grid.imageOut" alt="">
         </button>
+        <div
+          class="offcanvas offcanvas-end width-custom"
+          [id]="grid.client"
+          aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+              <h2 id="suraIn">{{grid.clientName}}</h2>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <h5>Proyecto: {{grid.titleProject}}</h5>
+              <p>{{grid.description}}</p>
+              <div class="align-link">
+                  <h6>Prototipo</h6>
+                  <a [href]="grid.link" target="_blank">Conoce el resultado</a>
+              </div>
+              <div class="images">
+                  <img [src]="grid.imageIn" alt="">
+              </div>
+          </div>
+        </div>
     </div>
   </div>
-  <app-detail-project></app-detail-project>
 </section>

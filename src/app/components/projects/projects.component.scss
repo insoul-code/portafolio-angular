@@ -95,6 +95,15 @@
   }
 }
 
+.offcanvas{
+  &.offcanvas-end{
+    &.width-custom{
+      width: 50%;
+    }
+  }
+}
+
+
 @media screen and (max-width: 768px){
   .contenedor{
     display: grid;

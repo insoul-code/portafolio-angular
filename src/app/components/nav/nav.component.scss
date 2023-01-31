@@ -11,13 +11,12 @@
   flex-grow: 0 !important;
 }
 
-main{
-  .navbar-expand-lg{
-    .navbar-nav{
-      .nav-link {
-        padding-right: 1.5rem;
-        padding-left: 1.5rem;
-      }
+
+.navbar-expand-lg{
+  .navbar-nav{
+    .nav-link {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
     }
   }
 }
