@@ -9,6 +9,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailProjectComponent } from './components/detail-project/detail-project.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SkillsComponent,
     ProjectsComponent,
     DetailProjectComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

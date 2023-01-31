@@ -1,0 +1,37 @@
+<section class="about-me padding-sections wow animate__animated animate__fadeInUp" id="about">
+    <div class="square-bg-left"></div>
+    <div class="name-section">
+        <p class="sub-parra">Gusto en conocerte</p>
+        <h2>Hola, soy Santiago<br>
+            Desarrollador Fronted UI &<br> 
+            Diseñador UX/UI.</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="body-about">
+                <p>
+                    El diseño y el desarrollo son dos temas que siempre van a estar unidos; el motivo principal es porque la presentación de los elementos e información se debe hacer ordenadamente ya que si no lo hacemos vamos a generar carga cognitiva excesiva al usuario final. Es por está principal razón por la que decidí ser más que un diseñador UI y embarcarme en el maravilloso mundo del desarrollo de software; en este camino de conocimiento he encontrado bastantes puntos en común sobre las metodologías  de diseño incluso en el back donde también me desenvuelvo muy bien, sin embargo mi esencia es el front y es por esto que soy <strong>Fronted UI & Diseñador UX/UI.</strong> <a href="#contact">¡Trabajemos juntos!</a>
+                </p>
+                <div class="myself">
+                    <img src="./../../../assets/images/img-srr.png" alt="Santiago Restrepo Rueda">
+                    <div>
+                        <h5>Santiago Restrepo Rueda</h5>
+                        <div><span>Diseñador UX/UI . En <a href="https://www.ceiba.com.co/" target="_blank">Ceiba Software</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="favorite-apps">
+        <h5>Aplicaciones que son referentes para mi</h5>
+        <div class="apps">
+            <article *ngFor="let app of appsAbout">
+                <div class="card-app">
+                    <img [src]="app.image" [alt]="app.title">
+                    <p>{{app.title}}</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
