@@ -11,6 +11,7 @@ import { DetailProjectComponent } from './components/detail-project/detail-proje
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ContactComponent } from './components/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule
 
 
 
