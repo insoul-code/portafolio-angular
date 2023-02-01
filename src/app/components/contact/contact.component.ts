@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -8,15 +8,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  form = new FormGroup({
-    name: new FormControl('',[Validators.required, Validators.maxLength(60)]),
-    email: new FormControl('', [Validators.required]),
-    message: new FormControl('', [Validators.required, Validators.maxLength(250)])
-  })
+  form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.buildForm();
+  }
 
   ngOnInit(): void {
+  }
+
+  save(event: Event) {
+    if (this.form.valid){
+      console.log(this.form.value);
+    } else {
+      this.form.markAllAsTouched();
+    }
+  }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      name: ['',[Validators.required, Validators.maxLength(60)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.maxLength(250)]]
+    });
   }
 
   get nameField() {

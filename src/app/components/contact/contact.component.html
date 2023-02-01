@@ -6,30 +6,35 @@
     </div>
     <div class="row align-items-center">
         <div class="col-md-6">
-            <form [formGroup]="form" class="formulario" id="formulario">
+            <form [formGroup]="form" class="formulario" (ngSubmit)="save($event)">
                 <div class="card-contact">
                     <div>
                         <label for="name">Nombre</label>
                         <div class="formulario__group-input">
                             <input
                                 [class.is-invalid]="isNameFieldInvalid"
-                                type="text" 
-                                name="name" 
-                                id="name" 
-                                placeholder="e.j: Pepito Perez o John Doe" 
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="e.j: Pepito Perez o John Doe"
                                 formControlName="name">
-                            <i class="icono-error fas fa-times-circle" [class.active]="isNameFieldInvalid"></i>
+                            <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isNameFieldInvalid"></i>
                         </div>
                         <div class="messages" [class.active]="isNameFieldInvalid">
-                            <small 
-                                class="mensaje-error" 
+                            <small
+                                class="mensaje-error"
                                 *ngIf="nameField?.hasError('required')">
                                     * El nombre es requerido
                             </small>
-                            <small 
-                                class="mensaje-error" 
+                            <small
+                                class="mensaje-error"
                                 *ngIf="nameField?.hasError('maxlength')">
                                     * El nombre no puede ser mayor a 60 carácteres
+                            </small>
+                            <small
+                                class="mensaje-error"
+                                *ngIf="nameField?.hasError('pattern')">
+                                    * El nombre no puede contener números
                             </small>
                         </div>
                     </div>
@@ -37,19 +42,25 @@
                     <div>
                         <label for="email">Correo electrónico</label>
                         <div class="formulario__group-input">
-                            <input 
+                            <input
                                 [class.is-invalid]="isEmailFieldInvalid"
-                                type="email" 
-                                name="email" 
-                                id="email" 
+                                type="email"
+                                name="email"
+                                id="email"
                                 placeholder="e.j: pepito@gmail.com"
                                 formControlName="email">
-                            <i class="icono-error fas fa-times-circle" [class.active]="isEmailFieldInvalid"></i>
+                            <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isEmailFieldInvalid"></i>
                         </div>
                         <div class="messages" [class.active]="isEmailFieldInvalid">
-                            <small 
-                                class="mensaje-error">
-                                El correo solo puede contener letras, números, puntos, guiones y guion bajo.
+                            <small
+                                class="mensaje-error"
+                                *ngIf="emailField?.hasError('required')">
+                                  * El correo es requerido
+                            </small>
+                            <small
+                                class="mensaje-error"
+                                *ngIf="emailField?.hasError('email')">
+                                  * Este no es un correo valido, prueba con esta estructura ej: mail@mail.com
                             </small>
                         </div>
                     </div>
@@ -57,42 +68,39 @@
                     <div>
                         <label for="mensaje">Mensaje</label>
                         <div class="formulario__group-input">
-                            <textarea 
+                            <textarea
                                 [class.is-invalid]="isMessageFieldInvalid"
-                                name="mensaje" id="mensaje" 
-                                cols="30" rows="4" 
+                                name="mensaje" id="mensaje"
+                                cols="30" rows="4"
                                 placeholder="¿Qué vamos a crear juntos, cuéntame?"
                                 formControlName="message">
                             </textarea>
-                            <i class="icono-error fas fa-times-circle" [class.active]="isMessageFieldInvalid"></i>
+                            <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isMessageFieldInvalid"></i>
                         </div>
                         <div class="messages" [class.active]="isMessageFieldInvalid">
-                            <small 
-                                class="mensaje-error">
+                            <small
+                                class="mensaje-error"
+                                *ngIf="messageField?.hasError('required')">
                                 El mensaje es requerido, máximo 250 carácteres.
                             </small>
                         </div>
                     </div>
 
-                    <!-- Grupo: Terminos y Condiciones -->
-                    <div>
-                        <label>
-                            <input 
-                                type="checkbox" 
-                                name="terminos" 
-                                id="terminos">
-                                Acepto los Términos y Condiciones
-                        </label>
+                    <div class="formulario-mensaje-error mt-3" [class.active]="isNameFieldInvalid">
+                        <p>
+                          <i class="fa-solid fa-circle-exclamation"></i>
+                          Error: Por favor completa todos los campos
+                        </p>
                     </div>
-                    <div class="formulario-mensaje-error" [class.active]="isNameFieldInvalid">
-                        <p><span class="material-icons">warning</span>Error: Por favor completa todos los campos</p>
+                    <div class="formulario-mensaje-exito mt-2" [class.active]="isNameFieldInvalid">
+                        <p>
+                          <i class="fa-solid fa-circle-check"></i>
+                          Formulario enviado con éxito
+                        </p>
                     </div>
-                    <div class="formulario-mensaje-exito">
-                        <p><span class="material-icons">done</span>Formulario enviado con éxito</p>
-                    </div>
-                    
+
                     <div class="d-flex justify-content-end button-contact mt-3">
-                        <button type="submit" class="btn-base button-primary btn-big" id="send">Enviar mensaje</button>
+                        <button [disabled]="form.invalid" type="submit" class="btn-base button-primary btn-big" id="send">Enviar mensaje</button>
                     </div>
                 </div>
             </form>
@@ -104,11 +112,11 @@
                     <div class="contact-info">
                         <h5>Otros medios de contacto</h5>
                         <div class="contact-way">
-                            <img src="./../../../assets/images/img-telegram.jpg" alt="Telegram">
+                          <i class="fa-brands fa-telegram"></i>
                             <a href="https://telegram.me/insoul12" target="_blank">Escríbeme por Telegram</a>
                         </div>
                         <div class="contact-way">
-                            <img src="./../../../assets/images/ic-mini-gmail.png" alt="Gmail">
+                            <i class="fa-solid fa-envelope"></i>
                             <a href="mailto:tiago931220@gmail.com">Envíame un correo</a>
                         </div>
                     </div>

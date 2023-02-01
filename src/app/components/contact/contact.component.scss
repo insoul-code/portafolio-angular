@@ -33,9 +33,9 @@
 .contact-info{
     padding-left: 100px;
 }
-  
+
 /* Estilos formulario validación */
-  
+
 input, textarea{
     border: 2px solid #C9C9C9;
     background: white;
@@ -44,14 +44,14 @@ input, textarea{
     border-radius: 30px;
     transition: all ease-in-out 0.5s;
 }
-  
+
 input:focus-visible, textarea:focus-visible{
     border-radius: 30px;
     border: 2px solid $color-secondary;
     outline: none;
     background: #f2f3ff;
 }
-  
+
 .formulario__group-input{
     position: relative;
     input{
@@ -59,7 +59,7 @@ input:focus-visible, textarea:focus-visible{
         &.is-invalid{
             border: 2px solid #bb2929;
         }
-    } 
+    }
     textarea{
         width: 100%;
         height: 100px;
@@ -67,7 +67,7 @@ input:focus-visible, textarea:focus-visible{
             border: 2px solid #bb2929;
         }
     }
-} 
+}
 
 .messages{
     opacity: 0;
@@ -76,12 +76,12 @@ input:focus-visible, textarea:focus-visible{
         opacity: 1;
     }
 }
-  
+
 .mensaje-error, .icono-error{
     color: #ff2d2d;
 }
 
-  
+
 .icono-error{
     position: absolute;
     right: 20px;
@@ -93,12 +93,12 @@ input:focus-visible, textarea:focus-visible{
         opacity: 1;
     }
 }
-  
+
 .formulario-mensaje-error{
     height: 45px;
     line-height: 45px;
     vertical-align: middle;
-    background: #f66060;
+    background: #aa3838;
     padding: 0 15px;
     border-radius: 3px;
     margin: 0 0 15px 0;
@@ -109,8 +109,7 @@ input:focus-visible, textarea:focus-visible{
         font-size: 16px;
         color: #fff;
         margin: 0;
-    }
-    span{
+    }span{
         margin: 0 10px 0 0;
         vertical-align: middle;
     }
@@ -119,7 +118,7 @@ input:focus-visible, textarea:focus-visible{
         opacity: 1;
     }
 }
-  
+
 .formulario-mensaje-exito{
     height: 45px;
     line-height: 45px;
@@ -130,9 +129,14 @@ input:focus-visible, textarea:focus-visible{
     margin: 0 0 15px 0;
     display: none;
     transition: all ease-in-out 0.5s;
+    opacity: 0;
     p{
         span{
             vertical-align: middle;
         }
+    }
+    &.active{
+      display: block;
+      opacity: 1;
     }
 }
