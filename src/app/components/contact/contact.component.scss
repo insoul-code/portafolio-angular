@@ -9,7 +9,6 @@
     flex-direction: column;
     box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
 }
-
 .card-aditional-contact{
     position: relative;
     display: flex;
@@ -18,55 +17,59 @@
     border-radius: 30px;
     padding: 20px;
     box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
-}
-
-.contact-way{
-    margin: 10px 0;
-}
-
-.img-contact{
-    position: absolute;
-    left: -30px;
-    top: 10px;
-}
-
-.contact-info{
-    padding-left: 100px;
+    .contact-way{
+      margin: 10px 0;
+      i[class~="fa-telegram"]{
+        color: #2da5e1;
+      }
+      i[class~="fa-envelope"]{
+        color: #e12d2d;
+      }
+      i{
+        margin: 0 10px 0 0;
+      }
+    }
+    .img-contact{
+      position: absolute;
+      left: -30px;
+      top: 10px;
+    }
+    .contact-info{
+      padding-left: 100px;
+    }
 }
 
 /* Estilos formulario validación */
 
-input, textarea{
+.formulario-grupo {
+  position: relative;
+  .fields-contact {
     border: 2px solid #C9C9C9;
     background: white;
     color: $neutral-50;
     padding: 15px;
     border-radius: 30px;
     transition: all ease-in-out 0.5s;
-}
-
-input:focus-visible, textarea:focus-visible{
-    border-radius: 30px;
-    border: 2px solid $color-secondary;
-    outline: none;
-    background: #f2f3ff;
-}
-
-.formulario__group-input{
-    position: relative;
-    input{
-        width: 100%;
-        &.is-invalid{
-            border: 2px solid #bb2929;
-        }
+    &:focus-visible{
+      border-radius: 30px;
+      border: 2px solid $color-secondary;
+      outline: none;
+      background: #f2f3ff;
     }
-    textarea{
-        width: 100%;
-        height: 100px;
-        &.is-invalid{
-            border: 2px solid #bb2929;
-        }
+  }
+  input{
+    width: 100%;
+    &.is-invalid{
+        border: 2px solid #bb2929;
     }
+  }
+  textarea{
+    width: 100%;
+    height: 100px;
+    &.is-invalid{
+        border: 2px solid #bb2929;
+    }
+  }
 }
 
 .messages{
@@ -80,7 +83,6 @@ input:focus-visible, textarea:focus-visible{
 .mensaje-error, .icono-error{
     color: #ff2d2d;
 }
-
 
 .icono-error{
     position: absolute;

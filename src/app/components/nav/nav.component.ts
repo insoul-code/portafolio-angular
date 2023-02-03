@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -11,5 +11,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // @HostListener('window:scroll', ['$event'])
+  //   scrollHandler(event) {
+  //     console.debug("Scroll Event");
+  //   }
 
 }

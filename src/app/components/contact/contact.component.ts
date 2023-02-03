@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      name: ['',[Validators.required, Validators.maxLength(60)]],
+      name: ['',[Validators.required, Validators.maxLength(40), Validators.pattern(/^[a-zA-ZÀ-ÿ\s]{1,40}$/)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.maxLength(250)]]
     });
@@ -38,9 +38,11 @@ export class ContactComponent implements OnInit {
   get nameField() {
     return this.form.get('name');
   }
+
   get emailField() {
     return this.form.get('email');
   }
+
   get messageField() {
     return this.form.get('message');
   }
