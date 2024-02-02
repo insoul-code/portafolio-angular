@@ -1,11 +1,11 @@
 <section class="projects padding-sections wow animate__animated animate__fadeInUp" id="works">
   <div class="align-justify-end">
     <div class="name-section">
-        <p>Portafolio</p>
-        <h2>Mis trabajos</h2>
+        <p>Portfolio</p>
+        <h2>My projects</h2>
     </div>
     <div class="link-projects">
-        <p>Todos los proyectos de diseño en
+        <p>All design projects in
             <a href="https://dribbble.com/TiagoLamat" target="blank">Dribbble
                 <img src="./../../../assets/images/ic-right-arrow.svg" alt="">
             </a>
@@ -26,11 +26,11 @@
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-              <h5>Proyecto: {{grid.titleProject}}</h5>
+              <h5>Project: {{grid.titleProject}}</h5>
               <p>{{grid.description}}</p>
-              <div class="align-link">
-                  <h6>Prototipo</h6>
-                  <a [href]="grid.link" target="_blank">Conoce el resultado</a>
+              <div class="align-link" *ngIf="grid.link !== ''">
+                  <h6>Prototype</h6>
+                  <a [href]="grid.link" target="_blank">See the result</a>
               </div>
               <div class="images">
                   <img [src]="grid.imageIn" alt="">

@@ -1,15 +1,15 @@
 <section class="contact padding-sections wow animate__animated animate__fadeInUp" id="contact">
     <div class="square-bg-right"></div>
     <div class="name-section">
-        <p class="sub-parra">Unamos conocimientos</p>
-        <h2>Trabajemos juntos</h2>
+        <p class="sub-parra">Let's pool our knowledge</p>
+        <h2>Let's work together</h2>
     </div>
     <div class="row align-items-center">
         <div class="col-md-6">
             <form [formGroup]="form" class="formulario" (ngSubmit)="save($event)">
                 <div class="card-contact">
                     <div>
-                        <label for="name">Nombre</label>
+                        <label for="name">Name</label>
                         <div class="formulario-grupo">
                             <input
                                 class="fields-contact"
@@ -25,23 +25,23 @@
                             <small
                                 class="mensaje-error"
                                 *ngIf="nameField?.hasError('required')">
-                                    * El nombre es requerido
+                                    * The name is required
                             </small>
                             <small
                                 class="mensaje-error"
                                 *ngIf="nameField?.hasError('maxlength')">
-                                    * El nombre no puede ser mayor a 40 carácteres
+                                    * The name cannot be longer than 40 characters.
                             </small>
                             <small
                                 class="mensaje-error"
                                 *ngIf="nameField?.hasError('pattern')">
-                                    * El nombre no puede contener números
+                                    * The name cannot contain numbers
                             </small>
                         </div>
                     </div>
 
                     <div>
-                        <label for="email">Correo electrónico</label>
+                        <label for="email">Email</label>
                         <div class="formulario-grupo">
                             <input
                                 class="fields-contact"
@@ -57,18 +57,18 @@
                             <small
                                 class="mensaje-error"
                                 *ngIf="emailField?.hasError('required')">
-                                  * El correo es requerido
+                                  * Mail is required
                             </small>
                             <small
                                 class="mensaje-error"
                                 *ngIf="emailField?.hasError('email')">
-                                  * Este no es un correo valido, prueba con esta estructura ej: mail@mail.com
+                                  * This is not a valid email, try this structure e.g.: mail@mail.com
                             </small>
                         </div>
                     </div>
 
                     <div>
-                        <label for="mensaje">Mensaje</label>
+                        <label for="mensaje">Message</label>
                         <div class="formulario-grupo">
                             <textarea
                                 class="fields-contact"
@@ -84,26 +84,34 @@
                             <small
                                 class="mensaje-error"
                                 *ngIf="messageField?.hasError('required')">
-                                El mensaje es requerido, máximo 250 carácteres.
+                                The message is required, maximum 250 characters.
                             </small>
                         </div>
                     </div>
 
-                    <div class="formulario-mensaje-error mt-3" [class.active]="isNameFieldInvalid">
+                    <div class="formulario-mensaje-error mt-3" [class.active]="allInputsFilled">
                         <p>
                           <i class="fa-solid fa-circle-exclamation"></i>
-                          Error: Por favor completa todos los campos
+                          Error: Please complete all fields
                         </p>
                     </div>
-                    <div class="formulario-mensaje-exito mt-2" [class.active]="isNameFieldInvalid">
+                    <div
+                      class="formulario-mensaje-exito mt-2"
+                      [class.active]="submitMessage !== ''"
+                      *ngIf="isSubmit">
                         <p>
                           <i class="fa-solid fa-circle-check"></i>
-                          Formulario enviado con éxito
+                          {{submitMessage}}
                         </p>
                     </div>
 
                     <div class="d-flex justify-content-end button-contact mt-3">
-                        <button [disabled]="form.invalid" type="submit" class="btn-base button-primary btn-big" id="send">Enviar mensaje</button>
+                        <button
+                          [disabled]="form.invalid"
+                          type="submit"
+                          class="btn-base button-primary btn-big"
+                          id="send"
+                          (click)="submitData(form.value)">Send message</button>
                     </div>
                 </div>
             </form>
@@ -113,14 +121,14 @@
                 <div class="card-aditional-contact">
                     <img class="img-contact" src="./../../../assets/images/ic-message.svg" alt="Mensaje icono">
                     <div class="contact-info">
-                        <h5>Otros medios de contacto</h5>
+                        <h5>Other means of contact</h5>
                         <div class="contact-way">
                           <i class="fa-brands fa-telegram"></i>
-                            <a href="https://telegram.me/insoul12" target="_blank">Escríbeme por Telegram</a>
+                            <a href="https://telegram.me/insoul12" target="_blank">Write me on Telegram</a>
                         </div>
                         <div class="contact-way">
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:tiago931220@gmail.com">Envíame un correo</a>
+                            <a href="mailto:tiago931220@gmail.com">Send me an email</a>
                         </div>
                     </div>
                 </div>

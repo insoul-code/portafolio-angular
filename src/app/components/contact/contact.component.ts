@@ -9,6 +9,8 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 export class ContactComponent implements OnInit {
 
   form: FormGroup;
+  isSubmit = true;
+  submitMessage = '';
 
   constructor(
     private formBuilder: FormBuilder
@@ -57,6 +59,21 @@ export class ContactComponent implements OnInit {
 
   get isMessageFieldInvalid() {
     return this.messageField?.touched && this.messageField.invalid;
+  }
+
+  get allInputsFilled() {
+    return this.nameField?.touched && this.nameField.invalid
+            || this.emailField?.touched && this.emailField.invalid
+            || this.messageField?.touched && this.messageField.invalid;
+  }
+
+  submitData(value: any){
+    console.log(value);
+    this.isSubmit = true;
+    this.submitMessage = 'Submitted successfully';
+    setTimeout(()=>{
+      this.isSubmit=false;
+    },8000)
   }
 
 }
