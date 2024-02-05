@@ -42,27 +42,27 @@
     grid-row: project-2;
   }
   .project-3{
-    background: #E5E5E5;
+    background: transparent;
     grid-column:  project-3;
     grid-row:  project-3;
   }
   .project-4{
-    background: #E5E5E5;
+    background: transparent;
     grid-column:  project-4;
     grid-row:  project-4;
   }
   .project-5{
-    background: #E5E5E5;
+    background: transparent;
     grid-column:  project-5;
     grid-row:  project-5;
   }
   .project-6{
-    background: #E5E5E5;
+    background: transparent;
     grid-column:  project-6;
     grid-row:  project-6;
   }
   .project-7{
-    background: #E5E5E5;
+    background: transparent;
     grid-column:  project-7;
     grid-row:  project-7;
   }
@@ -127,6 +127,9 @@
                           "project-7 project-7"
                           "project-7 project-7";
   }
+  .offcanvas.offcanvas-end.width-custom {
+    width: 100%;
+}
 }
 
 @media screen and (max-width: 565px){

@@ -17,7 +17,7 @@
                                 type="text"
                                 name="name"
                                 id="name"
-                                placeholder="e.j: Pepito Perez o John Doe"
+                                placeholder="e.g: Pepito Perez or John Doe"
                                 formControlName="name">
                             <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isNameFieldInvalid"></i>
                         </div>
@@ -49,7 +49,7 @@
                                 type="email"
                                 name="email"
                                 id="email"
-                                placeholder="e.j: pepito@gmail.com"
+                                placeholder="e.g: johndoe@gmail.com"
                                 formControlName="email">
                             <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isEmailFieldInvalid"></i>
                         </div>
@@ -62,7 +62,7 @@
                             <small
                                 class="mensaje-error"
                                 *ngIf="emailField?.hasError('email')">
-                                  * This is not a valid email, try this structure e.g.: mail@mail.com
+                                  * This is not a valid email, try this structure e.g.: "mail@mail.com"
                             </small>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                 [class.is-invalid]="isMessageFieldInvalid"
                                 name="mensaje" id="mensaje"
                                 cols="30" rows="4"
-                                placeholder="¿Qué vamos a crear juntos, cuéntame?"
+                                placeholder="What are we going to create together, tell me?"
                                 formControlName="message">
                             </textarea>
                             <i class="icono-error fa-solid fa-circle-xmark" [class.active]="isMessageFieldInvalid"></i>
@@ -117,7 +117,7 @@
             </form>
         </div>
         <div class="col-md-6">
-            <div class="d-flex justify-content-end">
+            <div class="d-flex aditional-info">
                 <div class="card-aditional-contact">
                     <img class="img-contact" src="./../../../assets/images/ic-message.svg" alt="Mensaje icono">
                     <div class="contact-info">
